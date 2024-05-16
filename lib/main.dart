@@ -15,22 +15,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final videoPostRepository = VideoPostsRepositoryImplementation(videosDataSource: LocalVideoDataSource());
+    final videoPostRepository = VideoPostsRepositoryImplementation(
+        videosDataSource: LocalVideoDataSource());
 
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          lazy: false,
-          create: (_)=> DiscoverProvider(videosRepository: videoPostRepository)..loadNextPage()
-        )
+            lazy: false,
+            create: (_) =>
+                DiscoverProvider(videosRepository: videoPostRepository)
+                  ..loadNextPage())
       ],
       child: MaterialApp(
-        title: 'TokTik',
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme().getTheme(),
-        home: const DiscoverScreen()
-      ),
+          title: 'TokTik',
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme().getTheme(),
+          home: const DiscoverScreen()),
     );
   }
 }
