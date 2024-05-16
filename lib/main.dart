@@ -32,5 +32,6 @@ class MyApp extends StatelessWidget {
           theme: AppTheme().getTheme(),
           home: const DiscoverScreen()),
     );
+    
   }
 }
